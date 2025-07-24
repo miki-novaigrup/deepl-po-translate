@@ -13,7 +13,7 @@ This tool allows you to automatically translate gettext `.po` files (used in man
 
 ---
 
-## 🛠️ 1. Install Python
+## 1. Install Python
 
 1. Download Python for Windows from:  
     👉 [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)
@@ -35,7 +35,7 @@ This tool allows you to automatically translate gettext `.po` files (used in man
     - polib – for reading and writing .po files
     - requests – for calling the DeepL API
 
-## 2. Configure py script
+## 2. Configure py script `config.py`
 
 1. Add the DeepL API key:
     ```python
@@ -65,4 +65,16 @@ This tool allows you to automatically translate gettext `.po` files (used in man
 
     ```bash
     python translate_po.py
+    ```
+
+## 4. Export to XLSX (Optional)
+
+1. Configure the result file in the `config.py` file
+    ```python
+    EXPORTED_XLSX_FILE = 'export/xxxx.xlsx'
+    ```
+
+2. Execute py command:
+    ```bash
+    python export_to_excel.py
     ```
