@@ -2,12 +2,10 @@ import polib
 import config
 from openpyxl import Workbook
 
-# Input and output file names
-po_file = 'messages.pt.po'
 xlsx_file = 'messages.pt.xlsx'
 
 # Load PO file
-po = polib.pofile(po_file)
+po = polib.pofile(config.ORIGIN_FILE)
 
 # Create workbook
 wb = Workbook()
@@ -22,6 +20,6 @@ for entry in po:
     ws.append([entry.msgid, entry.msgstr])
 
 # Save Excel file
-wb.save(xlsx_file)
+wb.save(config.EXPORTED_XLSX_FILE)
 
-print(f"✅ Exported: {xlsx_file}")
+print(f"✅ Exported: {config.EXPORTED_XLSX_FILE}")

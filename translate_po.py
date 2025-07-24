@@ -4,12 +4,12 @@ import time
 import config
 
 def translate_text(text):
-    url = DEEPL_API_URL
+    url = config.DEEPL_API_URL
     data = {
-        'auth_key': DEEPL_API_KEY,
+        'auth_key': config.DEEPL_API_KEY,
         'text': text,
-        'source_lang': SOURCE_LANG,
-        'target_lang': TARGET_LANG
+        'source_lang': config.SOURCE_LANG,
+        'target_lang': config.TARGET_LANG
     }
     response = requests.post(url, data=data)
     result = response.json()
@@ -19,7 +19,7 @@ def translate_text(text):
         print(f"DeepL error: {result}")
         return text
 
-po = polib.pofile(ORIGIN_FILE)
+po = polib.pofile(config.ORIGIN_FILE)
 
 for entry in po.untranslated_entries():
     print(f"Translating: {entry.msgid}")
@@ -27,5 +27,5 @@ for entry in po.untranslated_entries():
     entry.msgstr = translated
     time.sleep(1)  # Avoid hitting rate limits
 
-po.save(RESULT_FILE)
-print(f"Translation complete! Output: {RESULT_FILE}")
+po.save(config.RESULT_FILE)
+print(f"Translation complete! Output: {config.RESULT_FILE}")
