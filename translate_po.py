@@ -1,16 +1,10 @@
 import polib
 import requests
 import time
-
-DEEPL_API_KEY = 'your_deepl_api_key_here'  # Replace with your actual API key
-SOURCE_LANG = 'ES'
-TARGET_LANG = 'PT'
-
-ORIGIN_FILE = 'origin/xxxxx.po'
-RESULT_FILE = 'result/xxxxx.po'
+import config
 
 def translate_text(text):
-    url = 'https://api-free.deepl.com/v2/translate'
+    url = DEEPL_API_URL
     data = {
         'auth_key': DEEPL_API_KEY,
         'text': text,
