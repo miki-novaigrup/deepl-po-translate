@@ -211,8 +211,14 @@ __marimo__/
 .history/
 
 # Proyect generation files
-*.po
-*.xlsx
+origin/*
+!origin/.gitkeep
+
+export/*
+!export/.gitkeep
+
+result/*
+!result/.gitkeep
 
 # config.py is tracked once but ignored after; run this to prevent committing changes:
 # git update-index --assume-unchanged config.py
