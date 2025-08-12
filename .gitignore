@@ -220,5 +220,11 @@ export/*
 result/*
 !result/.gitkeep
 
+import/*
+!import/.gitkeep
+
+generated/*
+!generated/.gitkeep
+
 # config.py is tracked once but ignored after; run this to prevent committing changes:
 # git update-index --assume-unchanged config.py

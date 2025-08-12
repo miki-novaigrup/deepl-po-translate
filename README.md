@@ -27,13 +27,20 @@ This tool allows you to automatically translate gettext `.po` files (used in man
    python --version
    ```
 
-4. Install dependencies
+4. Install dependencies:
     ```bash
     pip install polib requests
     ```
 
     - polib – for reading and writing .po files
     - requests – for calling the DeepL API
+
+5. Install optional libraries for export and import with XLSX:
+    ```basch
+    pip install openpyxl
+    ```
+
+    - openpyxl – for reading and writing .xlsx files
 
 ## 2. Configure py script `config.py`
 
@@ -67,9 +74,9 @@ This tool allows you to automatically translate gettext `.po` files (used in man
     python translate_po.py
     ```
 
-## 4. Export to XLSX (Optional)
+## 4. Export PO to XLSX (Optional)
 
-1. Configure the result file in the `config.py` file
+1. Configure the result file in the `config.py` file:
     ```python
     EXPORTED_XLSX_FILE = 'export/xxxx.xlsx'
     ```
@@ -77,4 +84,19 @@ This tool allows you to automatically translate gettext `.po` files (used in man
 2. Execute py command:
     ```bash
     python export_to_excel.py
+    ```
+
+## 5. Import from XLSX to PO (Optional)
+
+1. Configure the result file in the `config.py` file:
+    ```python
+    IMPORTED_XLSX_FILE = 'import/pt_PT.xlsx'
+    GENERATED_PO_FILE = 'generated/pt_PT.po'
+    ```
+
+2. Configure the result PO file in the `import_to_po.py`:
+
+3. Execute py command:
+    ```bash
+    python import_to_po.py
     ```
