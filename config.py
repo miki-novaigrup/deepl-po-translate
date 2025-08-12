@@ -35,6 +35,13 @@ SOURCE_LANG = 'XX'
 TARGET_LANG = 'XX'
 
 # File names
+# Deepl translation
 ORIGIN_FILE = 'origin/xxxxx.po'
 RESULT_FILE = 'result/xxxxx.po'
+
+# Po to Excel
 EXPORTED_XLSX_FILE = 'export/xxxxx.xlsx'
+
+# Excel to Po
+IMPORTED_XLSX_FILE = 'import/xxxxx.xlsx'
+GENERATED_PO_FILE = 'generated/xxxxx.po'
